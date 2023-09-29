@@ -130,4 +130,3 @@ class TestFileStorage(unittest.TestCase):
         """Test that get resturns one object"""
         self.assertIsInstance(storage.count(), int)
         self.assertIsInstance(storage.count(State), int)
-
