@@ -107,7 +107,6 @@ def update_state(state_id):
         abort(404)
 
 # Error Handlers:
-
 @app_views.errorhandler(404)
 def not_found(error):
     """
