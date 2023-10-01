@@ -117,16 +117,19 @@ class TestFileStorage(unittest.TestCase):
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_get(self):
         """Test that get resturns one object"""
+        storage = FileStorage()
         first_state_id = list(storage.all(State).values())[0].id
         self.assertEqual(first_state_id, storage.get(State, first_state_id).id)
 
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_get_not_existing_id(self):
         """Test that get resturns one object"""
+        storage = FileStorage()
         self.assertEqual(None, storage.get(State, 'SomeBlaH'))
 
     @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_count(self):
         """Test that get resturns one object"""
+        storage = FileStorage()
         self.assertIsInstance(storage.count(), int)
         self.assertIsInstance(storage.count(State), int)
